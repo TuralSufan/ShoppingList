@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/shoppingListFragment">
+    <fragment
+        android:id="@+id/shoppingListFragment"
+        android:name="com.example.shoppinglist.ui.shoppinglist.ShoppingListFragment"
+        android:label="ShoppingListFragment" >
+        <action
+            android:id="@+id/action_shoppingListFragment_to_addShoppingItemDialog"
+            app:destination="@id/addShoppingItemDialog" />
+        <argument
+            android:name="itemData"
+            app:argType="com.example.shoppinglist.data.db.entities.ShoppingItem" />
+    </fragment>
+    <dialog
+        android:id="@+id/addShoppingItemDialog"
+        android:name="com.example.shoppinglist.ui.shoppinglist.AddShoppingItemDialog"
+        android:label="AddShoppingItemDialog" >
+        <action
+            android:id="@+id/action_addShoppingItemDialog_to_shoppingListFragment"
+            app:destination="@id/shoppingListFragment" />
+    </dialog>
+</navigation>
